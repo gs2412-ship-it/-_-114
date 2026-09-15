@@ -1,0 +1,9 @@
+{
+  "name": "铁工技能考试刷题",
+  "short_name": "铁工刷题",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f4f6",
+  "theme_color": "#111827",
+  "lang": "zh-CN"
+}

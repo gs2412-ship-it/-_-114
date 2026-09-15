@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111827"><link rel="manifest" href="manifest.json">
+<title>铁工技能考试刷题</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand">🔧 铁工技能考试刷题</div><div class="sub">基礎2級・鉄工（構造物鉄工作業）</div></header>
+<main>
+<section id="home" class="screen active">
+<div class="card hero"><h1>114题练习</h1><p>根据学科試験問題（抜粋114問）製作。</p>
+<div class="grid2"><button class="primary" onclick="startPractice(false)">顺序练习</button><button class="primary" onclick="startPractice(true)">随机练习</button><button onclick="startExam()">20题模拟考试</button><button onclick="showWrong()">错题本</button><button onclick="showFavorites()">收藏题</button><button onclick="showStats()">学习记录</button></div></div>
+<div class="card"><h2>考试规则</h2><p>每题只有两个答案：<b>正しい（正确）</b> / <b>間違い（错误）</b>。</p><p>模拟考试：20题、60分钟、70分及格。</p></div>
+</section>
+<section id="quiz" class="screen"><div class="topline"><button class="back" onclick="goHome()">← 首页</button><span id="modeLabel"></span><button class="fav" id="favBtn" onclick="toggleFavorite()">☆</button></div>
+<div class="progress"><div id="progressBar"></div></div><div id="progressText"></div>
+<div class="card question-card"><div class="qid" id="qid"></div><div class="question" id="question"></div>
+<div id="questionImageWrap" class="question-image-wrap" hidden>
+  <img id="questionImage" class="question-image" alt="题目图示" onclick="openImage(this.src)">
+  <div class="image-tip">点击图片可放大查看</div>
+</div>
+<div id="diagramNotice" class="source-note" hidden>※ 本题原题包含图示；图示已内置；点击图片可放大。</div>
+<div class="answers"><button class="answer" onclick="answer(true)">正しい<br><small>正确</small></button><button class="answer" onclick="answer(false)">間違い<br><small>错误</small></button></div>
+<div id="feedback" class="feedback"></div><button id="nextBtn" class="next" onclick="nextQuestion()" style="display:none">下一题 →</button></div></section>
+<section id="result" class="screen"><div class="card center"><h1 id="resultTitle">完成！</h1><div class="score" id="score"></div><p id="resultText"></p><div class="grid2"><button class="primary" onclick="startPractice(true)">再练一次</button><button onclick="goHome()">返回首页</button></div></div></section>
+<section id="list" class="screen"><div class="topline"><button class="back" onclick="goHome()">← 首页</button><span id="listTitle"></span></div><div id="listBody"></div>
+<div id="lightbox" class="lightbox" onclick="closeImage()"><button class="lightbox-close" onclick="event.stopPropagation();closeImage()">×</button><img id="lightboxImg" alt="放大图"></div></section>
+<section id="stats" class="screen"><div class="topline"><button class="back" onclick="goHome()">← 首页</button><span>学习记录</span></div><div class="card" id="statsBody"></div></section>
+</main><footer>铁工技能考试刷题 V2.2 · 114题 · 支持题目图片</footer>
+<script src="data.js"></script><script src="app.js"></script>
+</body></html>
